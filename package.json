@@ -1,0 +1,21 @@
+{
+  "name": "books",
+  "version": "1.0.0",
+  "description": "Simple collections of books",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.mjs"
+  },
+  "keywords": [
+    "books",
+    "rest",
+    "api"
+  ],
+  "author": "Shreya Jain",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "validator": "^13.11.0"
+  }
+}
