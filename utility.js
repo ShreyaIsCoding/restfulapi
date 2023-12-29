@@ -1,6 +1,7 @@
 // import books from '/books.json'
-const books=require('./books.json')
-function validateBookData(bookData) {
+
+function validateBookData(bookData, books) {
+
     // Basic validation checks (add more as needed)
     if (bookData === null || typeof bookData !== 'object') {
       return 'Invalid data: Data must be an object';
@@ -20,6 +21,7 @@ function validateBookData(bookData) {
     }
     
     const isBookAndAuthorNamePresent=books.find((book)=>book.bookName===bookData.bookName&&book.author===bookData.author);
+    // console.log(isBookAndAuthorNamePresent);
     if(isBookAndAuthorNamePresent){
         return 'Same book with same author name exists';
     }
@@ -43,6 +45,7 @@ function validateBookData(bookData) {
 function getId() {
     const timestamp = Date.now().toString(); // Get current timestamp as a string
     const random = Math.random().toString(); // Get random number as a string
+    // console.log(timestamp,random);
     const hash = timestamp + random; // Concatenate timestamp and random number
     const uniqueId = hash.split('').reduce((acc, char) => {
         const charCode = char.charCodeAt(0); // Get ASCII code of each character
